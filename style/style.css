@@ -1,0 +1,92 @@
+body {
+  background-color: #e7e9eb;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.class-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.class-element {
+  grid-column: 2;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  background-color: white;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 0.2em;
+}
+
+.class-button {
+  grid-column: 3;
+  grid-row: 1 /span 2;
+  width: 7em;
+  height: 4em;
+  float: right;
+  background-color: #4fb1d3;
+  border-radius: 0.2em;
+  color: white;
+  font-size: 1em;
+  border: none;
+  font-weight: 100;
+  outline: none;
+  margin: auto;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.class-image {
+  grid-column: 1;
+  grid-row: 1 /span 2;
+  border-radius: 4em;
+  border: 0.3em solid #4fb1d3;
+  margin: auto;
+  width: 5em;
+}
+
+.class-title {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 2em;
+  margin-top: auto;
+  font-weight: bold;
+}
+
+.class-count {
+  grid-column: 2;
+  grid-row: 2;
+  display: inline-block;
+}
+
+.class-title, .class-count {
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 625px) {
+  .class-element {
+    padding: 0.5em;
+  }
+  .class-button {
+    width: 4em;
+    font-size: 0.5em;
+  }
+  
+  .class-title {
+    font-size: 1em;
+  }
+  
+  .class-count {
+    font-size: 0.5em;
+  }
+  
+  .class-image {
+    width: 90%;
+    border-radius: 2em;
+    border: 0.1em solid #4fb1d3;
+  }
+}
