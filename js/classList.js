@@ -26,12 +26,15 @@ classes.sort(function compare (a, b) {
 
 // add list container to the DOM
 let app = document.getElementsByClassName('app')[0];
-let container = document.createElement('ul');
-app.appendChild(container);
+let container = document.createElement('div');
+let classList = document.createElement('ul');
 container.setAttribute('class', 'class-container');
+classList.setAttribute('class', 'class-list');
+container.appendChild(classList);
+app.appendChild(container);
 
 // loop through the classes array and create and append the necessary DOM elements
-classes.map(function(singleClass) { 
+classes.map(function(singleClass) {
     let classElement = document.createElement('li');
     let classTitle = document.createElement('span');
     let image = document.createElement('img');
@@ -49,7 +52,7 @@ classes.map(function(singleClass) {
     image.setAttribute('src',
       'https://s3-us-west-2.amazonaws.com/vidcode/assets/coursethumbs/creative-coding.png');
     classButton.setAttribute('class', 'class-button');
-
+    
     classButton.appendChild(buttonText);
     classCount.appendChild(classSummary);
     classTitle.appendChild(classTitleText);
@@ -57,5 +60,5 @@ classes.map(function(singleClass) {
     classElement.appendChild(classTitle);
     classElement.appendChild(classCount);
     classElement.appendChild(classButton);
-    container.appendChild(classElement);
+    classList.appendChild(classElement);
 });
