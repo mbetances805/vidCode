@@ -36,15 +36,17 @@ app.appendChild(container);
 // loop through the classes array and create and append the necessary DOM elements
 classes.map(function (singleClass) {
   let classElement = document.createElement('li');
-  let classTitle = document.createElement('span');
+  let classTitle = document.createElement('div');
+  let classInfo = document.createElement('div');
   let image = document.createElement('img');
-  let classCount = document.createElement('span');
+  let classCount = document.createElement('div');
   let classButton = document.createElement('button');
   let buttonText = document.createTextNode('Begin');
   let classTitleText = document.createTextNode(singleClass.name);
   let classSummary = document.createTextNode(`${singleClass.studentIds.length} Students`);
 
   classElement.setAttribute('class', 'class-element');
+  classInfo.setAttribute('class', 'class-info');
   image.setAttribute('class', 'class-image');
   image.setAttribute('alt', `${singleClass.name.toLowerCase()} image`)
   classTitle.setAttribute('class', 'class-title');
@@ -56,9 +58,10 @@ classes.map(function (singleClass) {
   classButton.appendChild(buttonText);
   classCount.appendChild(classSummary);
   classTitle.appendChild(classTitleText);
+  classInfo.appendChild(classTitle);
+  classInfo.appendChild(classCount);
   classElement.appendChild(image);
-  classElement.appendChild(classTitle);
-  classElement.appendChild(classCount);
+  classElement.appendChild(classInfo);
   classElement.appendChild(classButton);
   classList.appendChild(classElement);
 });

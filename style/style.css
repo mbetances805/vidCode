@@ -59,17 +59,20 @@ ul {
 }
 
 .class-title {
-  grid-column: 2;
-  grid-row: 1;
   font-size: 2em;
-  margin-top: auto;
   font-weight: bold;
+  display: block;
 }
 
 .class-count {
+  display: block;
+}
+
+.class-info {
   grid-column: 2;
-  grid-row: 2;
-  display: inline-block;
+  grid-row: 1 /span 2;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .class-title, .class-count {
@@ -91,15 +94,15 @@ ul {
     width: 4em;
     font-size: 0.5em;
   }
-  
+
   .class-title {
     font-size: 1em;
   }
-  
+
   .class-count {
     font-size: 0.5em;
   }
-  
+
   .class-image {
     width: 90%;
     border-radius: 2em;
@@ -111,9 +114,9 @@ ul {
   .class-title {
     font-size: 0.6em;
   }
-  
+
   .class-count {
     font-size: 0.4em;
   }
-  
+
 }
